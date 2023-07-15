@@ -88,7 +88,7 @@ let s:emoji_code = {
     \ 'necktie': 0x128084,
     \ 'stethoscope': 0x1FA7A,
     \ 'bricks': 0x1f9f1,
-    \ 'technologist': 0x1294898205128187,
+    \ 'technologist': '&#129489;&#8205;&#128187;',
     \ 'money_with_wings': 0x1F4B8,
     \ 'thread': 0x1F9F5,
     \ 'safety_vest': 0x1F9BA,
