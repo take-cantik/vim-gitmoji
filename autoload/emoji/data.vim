@@ -24,6 +24,7 @@
 let s:emoji_code = {
     \ 'zap': 0x26a1,
     \ 'sparkles': 0x2728,
+    \ 'technologist': '&#129489;&#8205;&#128187;',
 \ }
     " \ 'label': 0x1f3f7,
     " \ 'fire': 0x1f525,
@@ -89,7 +90,6 @@ let s:emoji_code = {
     " \ 'necktie': 0x128084,
     " \ 'stethoscope': 0x1FA7A,
     " \ 'bricks': 0x1f9f1,
-    " \ 'technologist': '&#129489;&#8205;&#128187;',
     " \ 'money_with_wings': 0x1F4B8,
     " \ 'thread': 0x1F9F5,
     " \ 'safety_vest': 0x1F9BA,
@@ -97,6 +97,7 @@ let s:emoji_code = {
 let s:emoji_gitmoji = {
     \ 'zap': ['  [Update] 機能更新: Improving performance.'],
     \ 'sparkles': ['  [Add] 新機能追加: Introducing new features.'],
+    \ 'technologist': ['  [Update] 開発者体験の向上: Improve developer experience.'],
 \ }
     " \ 'label': ['  [Add,Update] 型の更新: Adding or updating types (Flow, TypeScript)'],
     " \ 'fire': ['  [Delete] コードの削除: Removing code or files.'],
@@ -162,7 +163,6 @@ let s:emoji_gitmoji = {
     " \ 'necktie': ['  [Add,Update] ビジネスロジックの更新: Add or update business logic.'],
     " \ 'stethoscope': ['  [Add,Update] ヘルスチェックの更新: Add or update healthcheck.'],
     " \ 'bricks': ['  [Update] インフラに関する変更: Infrastructure related changes.'],
-    " \ 'technologist': ['  [Update] 開発者体験の向上: Improve developer experience.'],
     " \ 'money_with_wings': ['  [Add] お金に関するインフラの追加: Add sponsorships or money related infrastructure.'],
     " \ 'thread': ['  [Add,Update] 並列処理に関する変更: Add or update code related to multithreading or concurrency.'],
     " \ 'safety_vest': ['  [Add,Update] バリデーションの更新: Add or update code related to validation.']
