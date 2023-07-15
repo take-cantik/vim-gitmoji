@@ -22,8 +22,8 @@
 " WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 let s:emoji_code = {
-    \ 'sparkles': 0x2728,
     \ 'zap': 0x26a1,
+    \ 'sparkles': 0x2728,
 \ }
     " \ 'label': 0x1f3f7,
     " \ 'fire': 0x1f525,
@@ -95,8 +95,8 @@ let s:emoji_code = {
     " \ 'safety_vest': 0x1F9BA,
 
 let s:emoji_gitmoji = {
-    \ 'sparkles': ['  test[Add] 新機能追加: Introducing new features.'],
     \ 'zap': ['  [Update] 機能更新: Improving performance.'],
+    \ 'sparkles': ['  [Add] 新機能追加: Introducing new features.'],
 \ }
     " \ 'label': ['  [Add,Update] 型の更新: Adding or updating types (Flow, TypeScript)'],
     " \ 'fire': ['  [Delete] コードの削除: Removing code or files.'],
