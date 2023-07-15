@@ -95,7 +95,7 @@ let s:emoji_code = {
     " \ 'safety_vest': 0x1F9BA,
 
 let s:emoji_gitmoji = {
-    \ 'sparkles': ['  [Add] 新機能追加: Introducing new features.'],
+    \ 'sparkles': ['  test[Add] 新機能追加: Introducing new features.'],
     \ 'zap': ['  [Update] 機能更新: Improving performance.'],
 \ }
     " \ 'label': ['  [Add,Update] 型の更新: Adding or updating types (Flow, TypeScript)'],
