@@ -52,6 +52,7 @@ function! emoji#for(name, ...)
   endif
 
   let echar = type(emoji) == 0 ? nr2char(emoji) :
+        \ type(emoji) == 1 ? emoji :
         \ join(map(copy(emoji), 'nr2char(v:val)'), '')
   let pad = get(a:, 2, 1)
   if pad
