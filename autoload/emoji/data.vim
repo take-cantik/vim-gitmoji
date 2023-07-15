@@ -24,7 +24,7 @@
 let s:emoji_code = {
     \ 'zap': 0x26a1,
     \ 'sparkles': 0x2728,
-    \ 'technologist': '&#129489;&#8205;&#128187;',
+    \ 'technologist': '&#x1F9D1;&#x200D;&#x1F4BB;',
 \ }
     " \ 'label': 0x1f3f7,
     " \ 'fire': 0x1f525,
