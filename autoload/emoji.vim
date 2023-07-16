@@ -40,31 +40,31 @@ function! emoji#list()
   return keys(emoji#data#dict())
 endfunction
 
-function! emoji#for(name, ...)
-  let emoji = get(emoji#data#dict(), tolower(a:name), '')
-  if empty(emoji)
-    return a:0 > 0 ? a:1 : emoji
-  endif
+" function! emoji#for(name, ...)
+"   let emoji = get(emoji#data#dict(), tolower(a:name), '')
+"   if empty(emoji)
+"     return a:0 > 0 ? a:1 : emoji
+"   endif
 
-  let echar = type(emoji) == 0 ? nr2char(emoji) :
-    \ join(map(copy(emoji), 'nr2char(v:val)'), '')
-  let pad = get(a:, 2, 1)
-  if pad
-    return echar . repeat(' ', 1 + pad - s:strwidth(echar))
-  else
-    return echar
-  endif
-endfunction
+"   let echar = type(emoji) == 0 ? nr2char(emoji) :
+"     \ join(map(copy(emoji), 'nr2char(v:val)'), '')
+"   let pad = get(a:, 2, 1)
+"   if pad
+"     return echar . repeat(' ', 1 + pad - s:strwidth(echar))
+"   else
+"     return echar
+"   endif
+" endfunction
 
-function! emoji#description(name, ...)
-  let emoji = get(emoji#data#gitmoji(), tolower(a:name), '')
-  if empty(emoji)
-    return a:0 > 0 ? a:1 : emoji
-  endif
+" function! emoji#description(name, ...)
+"   let emoji = get(emoji#data#gitmoji(), tolower(a:name), '')
+"   if empty(emoji)
+"     return a:0 > 0 ? a:1 : emoji
+"   endif
 
-  let echar = type(emoji) == 0 ? nr2char(emoji) : emoji
-  return echar
-endfunction
+"   let echar = type(emoji) == 0 ? nr2char(emoji) : emoji
+"   return echar
+" endfunction
 
 let s:max_score = 1000
 function! s:score(haystack, needle)
