@@ -130,7 +130,7 @@ function! emoji#complete(findstart, base)
     endfunction
     let matches = sort(matches, 'EmojiSort')
     delfunction EmojiSort
-    return map(matches, 'v:val[1]')
+    return map(matches, 'v:val')
   endif
 endfunction
 
