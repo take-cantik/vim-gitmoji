@@ -93,13 +93,15 @@ function! emoji#complete(findstart, base)
     endfor
 
     function! PrioritySort(t1, t2)
-      return a:t1['priority'] - a:t2['priority']
+      return a:t1['priority'] >= a:t2['priority'] ? -1 : 1
     endfunction
 
     let s:emojis = map(keys(sort(s:emojilist, 'PrioritySort')),
           \ emoji#available() ?
           \ '{ "word": ":".v:val.":", "priority": emoji#for(v:val).emoji#description(v:val).priority,  "kind": emoji#for(v:val).emoji#description(v:val).description }' :
           \ '{ "word": ":".v:val.":" }')
+
+    delfunction PrioritySort
   endif
 
   if a:findstart
