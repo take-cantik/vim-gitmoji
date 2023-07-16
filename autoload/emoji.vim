@@ -87,16 +87,16 @@ endfunction
 
 function! emoji#complete(findstart, base)
   if !exists('s:emojis')
-    let s:emojilist = []
-    for item in values(emoji#data#dict())
-      call add(s:emojilist, item)
-    endfor
+    " let s:emojilist = []
+    " for item in values(emoji#data#dict())
+    "   call add(s:emojilist, item)
+    " endfor
 
     function! PrioritySort(t1, t2)
       return a:t1['priority'] >= a:t2['priority'] ? -1 : 1
     endfunction
 
-    let s:emojis = map(keys(sort(s:emojilist, 'PrioritySort')),
+    let s:emojis = map(keys(sort(emoji#data#dict(), 'PrioritySort')),
           \ emoji#available() ?
           \ '{ "word": ":".v:val.":", "priority": emoji#for(v:val).emoji#description(v:val).priority,  "kind": emoji#for(v:val).emoji#description(v:val).description }' :
           \ '{ "word": ":".v:val.":" }')
