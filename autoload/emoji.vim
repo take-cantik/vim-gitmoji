@@ -70,7 +70,7 @@ function! emoji#description(name, ...)
   let echar = type(emoji) == 0 ? nr2char(emoji) : emoji
   let pad = get(a:, 2, 1)
   if pad
-    return echar.description
+    return echar
   else
     return echar
   endif
@@ -89,7 +89,7 @@ function! emoji#complete(findstart, base)
   if !exists('s:emojis')
     let s:emojis = map(keys(emoji#data#dict()),
           \ emoji#available() ?
-          \ '{ "word": ":".v:val.":", "kind": emoji#for(v:val).emoji#description(v:val) }' :
+          \ '{ "word": ":".v:val.":", "kind": emoji#for(v:val).emoji#description(v:val).description }' :
           \ '{ "word": ":".v:val.":" }')
   endif
 
@@ -108,14 +108,14 @@ function! emoji#complete(findstart, base)
     augroup END
 
     let matches = filter(map(copy(s:emojis), '[s:score(v:val.word, a:base[1:]), v:val]'), 'v:val[0] >= 0')
-    " function! EmojiSort(t1, t2)
-    "   if a:t1[0] == a:t2[0]
-    "     return a:t1[1].word <= a:t2[1].word ? -1 : 1
-    "   endif
-    "   return a:t1[0] >= a:t2[0] ? -1 : 1
-    " endfunction
-    " let matches = sort(matches, 'EmojiSort')
-    " delfunction EmojiSort
+    function! EmojiSort(t1, t2)
+      if a:t1[0] == a:t2[0]
+        return a:t1[1].word <= a:t2[1].word ? -1 : 1
+      endif
+      return a:t1[0] >= a:t2[0] ? -1 : 1
+    endfunction
+    let matches = sort(matches, 'EmojiSort')
+    delfunction EmojiSort
     return map(matches, 'v:val[1]')
   endif
 endfunction
