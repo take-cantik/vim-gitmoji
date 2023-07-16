@@ -107,10 +107,10 @@ function! emoji#complete(findstart, base)
             \| augroup! emoji_complete_redraw
     augroup END
 
-    let matches = filter(map(copy(s:emojis), '[s:score(v:val.priority, a:base[1:]), v:val]'), 'v:val[0] >= 0')
+    let matches = filter(map(copy(s:emojis), '[s:score(v:val, a:base[1:]), v:val]'), 'v:val[0] >= 0')
     function! EmojiSort(t1, t2)
       if a:t1[0] == a:t2[0]
-        return a:t1[1].word <= a:t2[1].word ? -1 : 1
+        return a:t1[1].priority <= a:t2[1].priority ? -1 : 1
       endif
       return a:t1[0] >= a:t2[0] ? -1 : 1
     endfunction
