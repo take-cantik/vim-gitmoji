@@ -87,11 +87,6 @@ endfunction
 
 function! emoji#complete(findstart, base)
   if !exists('s:emojis')
-    " let s:emojilist = []
-    " for item in values(emoji#data#dict())
-    "   call add(s:emojilist, item)
-    " endfor
-
     function! PrioritySort(t1, t2)
       return a:t1['priority'] >= a:t2['priority'] ? -1 : 1
     endfunction
