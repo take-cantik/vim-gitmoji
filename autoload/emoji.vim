@@ -86,8 +86,6 @@ function! emoji#complete(findstart, base)
       return a:t1['priority'] >= a:t2['priority'] ? -1 : 1
     endfunction
 
-    echo "hello"
-
     let s:emojilist = []
     for [key, value] in items(emoji#data#dict())
       let item = {
@@ -101,7 +99,7 @@ function! emoji#complete(findstart, base)
 
     let s:emojis = map(
       \ sort(s:emojilist, 'PrioritySort'),
-      \ '{ "word": ":".v:val["word"].":", "priority": v:val["priority"], "kind": v:val["description"] }'
+      \ '{ "word": ":".v:val["word"].":", "kind": v:val["description"], "priority": v:val["priority"],  }'
     \ )
 
     delfunction PrioritySort
