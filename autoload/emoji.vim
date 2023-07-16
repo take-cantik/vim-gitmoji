@@ -92,7 +92,11 @@ function! emoji#complete(findstart, base)
       call add(s:emojilist, item)
     endfor
 
-    let s:emojis = map(keys(sort(s:emojilist, 'get(v:val, "priority", 0)')),
+    function! PrioritySort(t1, t2)
+      return a:t1.priority - a:t2.priority
+    endfunction
+
+    let s:emojis = map(keys(sort(s:emojilist, 'PrioritySort')),
           \ emoji#available() ?
           \ '{ "word": ":".v:val.":", "priority": emoji#for(v:val).emoji#description(v:val).priority,  "kind": emoji#for(v:val).emoji#description(v:val).description }' :
           \ '{ "word": ":".v:val.":" }')
