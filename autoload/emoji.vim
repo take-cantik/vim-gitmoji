@@ -87,7 +87,7 @@ endfunction
 
 function! emoji#complete(findstart, base)
   if !exists('s:emojis')
-    let s:emojis = map(keys(sort(copy(emoji#data#dict()), 'get(v:val, "priority", 0)')),
+    let s:emojis = map(keys(sort(items(emoji#data#dict()), 'get(v:val, "priority", 0)')),
           \ emoji#available() ?
           \ '{ "word": ":".v:val.":", "priority": emoji#for(v:val).emoji#description(v:val).priority,  "kind": emoji#for(v:val).emoji#description(v:val).description }' :
           \ '{ "word": ":".v:val.":" }')
