@@ -67,13 +67,12 @@ function! emoji#description(name, ...)
     return a:0 > 0 ? a:1 : emoji
   endif
 
-  let echar = type(emoji) == 0 ? nr2char(emoji) :
-    \ join(map(copy(emoji), '(v:val)'), '')
+  let echar = type(emoji) == 0 ? nr2char(emoji) : emoji
   let pad = get(a:, 2, 1)
   if pad
-    return echar.description . repeat(' ', 1 + pad - s:strwidth(echar.description))
-  else
     return echar.description
+  else
+    return echar
   endif
 endfunction
 
