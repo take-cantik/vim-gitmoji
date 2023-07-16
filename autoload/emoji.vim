@@ -95,8 +95,8 @@ function! emoji#complete(findstart, base)
     for [key, value] in items(emoji#data#dict())
       let s:item = {
         \ 'word': key,
-        \ 'priority': value.priority,
-        \ 'description': value.description
+        \ 'priority': value['priority'],
+        \ 'description': value['description']
       \ }
 
       call add(s:emojilist, s:item)
@@ -104,7 +104,7 @@ function! emoji#complete(findstart, base)
 
     let s:emojis = map(sort(values(s:emojilist), 'PrioritySort'),
           \ emoji#available() ?
-          \ '{ "word": ":".v:val.word.":", "priority": v:val.priority,  "kind": v:val.description }' :
+          \ '{ "word": ":".v:val["word"].":", "priority": v:val["priority"],  "kind": v:val["description"] }' :
           \ '{ "word": ":".v:val.word.":" }')
 
     delfunction PrioritySort
