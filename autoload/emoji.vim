@@ -36,11 +36,6 @@ else
   endfunction
 endif
 
-" Deprecated
-function! emoji#available()
-  return 1
-endfunction
-
 function! emoji#list()
   return keys(emoji#data#dict())
 endfunction
@@ -104,10 +99,10 @@ function! emoji#complete(findstart, base)
       call add(s:emojilist, s:item)
     endfor
 
-    let s:emojis = map(sort(s:emojilist, 'PrioritySort'),
-          \ emoji#available() ?
-          \ '{ "word": ":".v:val["word"].":", "priority": v:val["priority"],  "kind": v:val["description"] }' :
-          \ '{ "word": ":".v:val.word.":" }')
+    let s:emojis = map(
+      \ sort(s:emojilist, 'PrioritySort'),
+      \ '{ "word": ":".v:val["word"].":", "priority": v:val["priority"],  "kind": v:val["description"] }'
+    \ )
 
     delfunction PrioritySort
   endif
