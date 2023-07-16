@@ -93,7 +93,7 @@ function! emoji#complete(findstart, base)
     endfor
 
     function! PrioritySort(t1, t2)
-      return a:t1.priority - a:t2.priority
+      return a:t1['priority'] - a:t2['priority']
     endfunction
 
     let s:emojis = map(keys(sort(s:emojilist, 'PrioritySort')),
