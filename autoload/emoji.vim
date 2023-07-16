@@ -91,6 +91,8 @@ function! emoji#complete(findstart, base)
       return a:t1['priority'] >= a:t2['priority'] ? -1 : 1
     endfunction
 
+    echo "hello"
+
     let s:emojilist = []
     for [key, value] in items(emoji#data#dict())
       let s:item = {
