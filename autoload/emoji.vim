@@ -68,7 +68,7 @@ function! emoji#description(name, ...)
   endif
 
   let echar = type(emoji) == 0 ? nr2char(emoji) :
-    \ join(map(copy(emoji), '(v:val)'), '')
+    \ join(map(copy(emoji), '(v:val.description)'), '')
   let pad = get(a:, 2, 1)
   if pad
     return echar . repeat(' ', 1 + pad - s:strwidth(echar))
@@ -90,7 +90,7 @@ function! emoji#complete(findstart, base)
   if !exists('s:emojis')
     let s:emojis = map(keys(emoji#data#dict()),
           \ emoji#available() ?
-          \ '{ "word": ":".v:val.":", "kind": emoji#for(v:val).emoji#description(v:val).description }' :
+          \ '{ "word": ":".v:val.":", "kind": emoji#for(v:val).emoji#description(v:val) }' :
           \ '{ "word": ":".v:val.":" }')
   endif
 
