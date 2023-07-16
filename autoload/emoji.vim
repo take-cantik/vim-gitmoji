@@ -96,7 +96,7 @@ function! emoji#complete(findstart, base)
       return a:t1['priority'] >= a:t2['priority'] ? -1 : 1
     endfunction
 
-    let s:emojis = map(keys(sort(emoji#data#dict(), 'PrioritySort')),
+    let s:emojis = map(keys(sort(values(emoji#data#dict()), 'PrioritySort')),
           \ emoji#available() ?
           \ '{ "word": ":".v:val.":", "priority": emoji#for(v:val).emoji#description(v:val).priority,  "kind": emoji#for(v:val).emoji#description(v:val).description }' :
           \ '{ "word": ":".v:val.":" }')
