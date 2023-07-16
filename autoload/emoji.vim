@@ -102,7 +102,7 @@ function! emoji#complete(findstart, base)
       call add(s:emojilist, s:item)
     endfor
 
-    let s:emojis = map(sort(values(s:emojilist), 'PrioritySort'),
+    let s:emojis = map(sort(s:emojilist, 'PrioritySort'),
           \ emoji#available() ?
           \ '{ "word": ":".v:val["word"].":", "priority": v:val["priority"],  "kind": v:val["description"] }' :
           \ '{ "word": ":".v:val.word.":" }')
