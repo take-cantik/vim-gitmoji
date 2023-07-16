@@ -99,7 +99,7 @@ function! emoji#complete(findstart, base)
         \ 'description': value.description
       \ }
 
-      call add(s:emojilist, item)
+      call add(s:emojilist, s:item)
     endfor
 
     let s:emojis = map(sort(values(s:emojilist), 'PrioritySort'),
