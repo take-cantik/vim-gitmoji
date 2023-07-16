@@ -89,7 +89,7 @@ function! emoji#complete(findstart, base)
   if !exists('s:emojis')
     let s:emojilist = []
     for item in values(emoji#data#dict())
-      call add(emojilist, item)
+      call add(s:emojilist, item)
     endfor
 
     let s:emojis = map(keys(sort(s:emojilist, 'get(v:val, "priority", 0)')),
