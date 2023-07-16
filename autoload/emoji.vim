@@ -63,7 +63,7 @@ function! emoji#description(name, ...)
   endif
 
   let echar = type(emoji) == 0 ? nr2char(emoji) : emoji
-  return echar
+  return echar.description
 endfunction
 
 let s:max_score = 1000
