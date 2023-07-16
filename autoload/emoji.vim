@@ -126,11 +126,11 @@ function! emoji#complete(findstart, base)
       if a:t1[0] == a:t2[0]
         return a:t1[1].priority <= a:t2[1].priority ? -1 : 1
       endif
-      return a:t1[0] >= a:t2[0] ? -1 : 1
+      return a:t1[0].priority >= a:t2[0].priority? -1 : 1
     endfunction
     let matches = sort(matches, 'EmojiSort')
     delfunction EmojiSort
-    return map(matches, 'v:val')
+    return map(matches, 'v:val["description"]')
   endif
 endfunction
 
