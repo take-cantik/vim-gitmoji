@@ -39,6 +39,7 @@ let s:emoji_code = {
   \ 'green_heart': 0x1f49a,
   \ 'recycle': 0x267b,
   \ 'wrench': 0x1f527,
+  \ 'white_check_mark': 0x2705,
 \ }
     " \ 'alien': 0x1f47d,
     " \ 'ambulance': 0x1f691,
@@ -83,7 +84,6 @@ let s:emoji_code = {
     " \ 'twisted_rightwards_arrows': 0x1f500,
     " \ 'wastebasket': 0x1f5d1,
     " \ 'wheelchair': 0x267f,
-    " \ 'white_check_mark': 0x2705,
     " \ 'monocle_face': 0x1F9D0,
     " \ 'test_tube': 0x1F9EA,
     " \ 'necktie': 0x128084,
@@ -111,6 +111,7 @@ let s:emoji_gitmoji = {
   \ 'green_heart':         {'priority': 15, 'description': '  [Fix]    CIの修正: Fixing CI Build.'},
   \ 'recycle':             {'priority': 16, 'description': '  [Refact] リファクタリング: Refactoring code.'},
   \ 'wrench':              {'priority': 17, 'description': '  [Update] 設定ファイルの変更: Changing configuration files.'},
+  \ 'white_check_mark':    {'priority': 18, 'description': '  [Update] テストを更新: Updating tests.'},
 \ }
     " \ 'alien': ['  [Update] APIの変更に伴う更新: Updating code due to external API changes.'],
     " \ 'ambulance': ['  [Fix] 緊急性の高い修正: Critical hotfix.'],
@@ -155,7 +156,6 @@ let s:emoji_gitmoji = {
     " \ 'twisted_rightwards_arrows': ['  [Update] マージ: Merging branches.'],
     " \ 'wastebasket': ['  [Add] 非推奨なコード: Deprecating code that needs to be cleaned up.'],
     " \ 'wheelchair': ['  [Update] アクセシビリティの改善: Improving accessibility.'],
-    " \ 'white_check_mark': ['  [Update] テストを更新: Updating tests.'],
     " \ 'monocle_face': ['  [Research] データの調査: Data exploration/inspection.'],
     " \ 'test_tube': ['  [Add] 落ちるテストの作成: Add a failing test.'],
     " \ 'necktie': ['  [Add,Update] ビジネスロジックの更新: Add or update business logic.'],
